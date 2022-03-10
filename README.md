@@ -11,3 +11,6 @@ Ex com URL porta:
 https://www.google.com.br:443/search?q=testes+de+api
 
 Fazer uma Requisição retorna um objeto do tipo response que possui um corpo (BODY), cabeçalho (STATUS CODE)
+
+HTTP Status code:
+https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status

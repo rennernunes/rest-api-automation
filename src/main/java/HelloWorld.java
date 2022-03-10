@@ -9,6 +9,6 @@ public class HelloWorld {
 
     Response response = io.restassured.RestAssured.request(Method.GET, url_google);
     System.out.println(response.getBody().asString());
-    
+    System.out.println(response.statusCode());
   }
 }
