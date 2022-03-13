@@ -1,16 +1,31 @@
+### Composi√ß√£o da URL:
+
+
+```
 https://www.google.com.br/search?q=testes+de+api
+```
 
-Protocolo: https
-EndereÁo: www.google.com.br
-Recurso: search?q=testes+de+api
-Porta padr„o http: 80
-Porta padr„o https: 443
 
-Ex com URL porta:
+|  |  |
+| --- | --- |
+| Protocolo | https |
+| Endere√ßo | www.google.com.br |
+| Recurso | search?q=testes+de+api |
+| Porta padr√£o http | 80 |
+| Porta padr√£o https | 443 |
 
+### Ex com URL porta 443:
+
+```
 https://www.google.com.br:443/search?q=testes+de+api
+```
 
-Fazer uma RequisiÁ„o retorna um objeto do tipo response que possui um corpo (BODY), cabeÁalho (STATUS CODE)
+Fazer uma Requisi√ß√£o um objeto do tipo response retorna: um corpo (BODY) e cabe√ßalho (STATUS 
+CODE)
 
-HTTP Status code:
+### HTTP Status code:
+
+```
 https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
+```
+
