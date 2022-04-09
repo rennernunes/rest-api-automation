@@ -29,3 +29,7 @@ CODE)
 https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
 ```
 
+### Extensão formatar JSON navegador:
+```
+https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=pt-BR
+```
