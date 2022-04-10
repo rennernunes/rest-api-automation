@@ -146,7 +146,7 @@ public class UserJsonTest {
     System.out.println(RestAssured.get(url_us).prettyPrint());
   }
 
-  //simplificando as valikdações com JsonPath
+  //simplificando as validações com JsonPath
   @Test
   public void joinJsonPathWithJava() {
     ArrayList<String> names =
