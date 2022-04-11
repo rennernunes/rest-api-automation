@@ -18,23 +18,23 @@ public class UserXpathTest {
 
   @Test
   public void advancedValidationXPath() {
-    Response response = RestAssured.request(Method.GET, url_us);
-    System.out.println(response.getBody().prettyPrint());
-
     RestAssured
         .given()
         .when().get(url_us)
         .then()
         .statusCode(200)
-        .body("users.user.name.size()", Matchers.is(3))
-        .body("users.user.findAll{it.age.toInteger() <= 25}.size()", Matchers.is(2))
-        .body("users.user.@id", Matchers.hasItems("1", "2", "3")) //XML sempre utiliza string
-        .body("users.user.find{it.age == 25}.name", Matchers.is("Maria Joaquina"))
-        .body("users.user.findAll{it.name.toString().contains('n')}.name", Matchers.hasItems("Maria Joaquina", "Ana Julia"))
-        .body("users.user.salary.find{it != null}", Matchers.is("1234.5678"))
-        .body("users.user.salary.find{it != null}.toDouble()", Matchers.is(1234.5678d))
-        .body("users.user.age.collect{it.toInteger() * 2}", Matchers.hasItems(40, 50, 60))
-        .body("users.user.name.findAll{it.toString().startsWith('Maria')}.collect{it.toString().toUpperCase()}", Matchers.is("MARIA JOAQUINA"))
+        .body(Matchers.hasXPath("count(/users/user)", Matchers.is("3")))
+        .body(Matchers.hasXPath("/users/user[@id='1']"))
+        .body(Matchers.hasXPath("//user[@id='2']")) //outra forma
+        .body(Matchers.hasXPath("//name[text()='Luizinho']"))
+        .body(Matchers.hasXPath("//name[text()='Luizinho']/../../name", Matchers.is("Ana Julia"))) // /.. sobe um nível / desce. A partir dos filhos obter nome da mão
+        .body(Matchers.hasXPath("//name[text()='Ana Julia']/following-sibling::filhos", Matchers.allOf(Matchers.containsString("Zezinho"), Matchers.containsString("Luizinho")))) // A partir da mãe obter o nome dos filhos
+        .body(Matchers.hasXPath("//user/name", Matchers.is("João da Silva"))) //pegar o primeiro nome
+        .body(Matchers.hasXPath("//user[2]/name", Matchers.is("Maria Joaquina"))) //pegar o segundo nome
+        .body(Matchers.hasXPath("//user[last()]/name", Matchers.is("Ana Julia"))) //pegar o penultimo nome
+        .body(Matchers.hasXPath("count(//user/name[contains(., 'n')])", Matchers.is("2"))) //pessoas com N no nome
+        .body(Matchers.hasXPath("//user[age < 24]/name", Matchers.is("Ana Julia")))
+        .body(Matchers.hasXPath("//user[age > 20 and age <30 ]/name", Matchers.is("Maria Joaquina")))
     ;
   }
 
