@@ -1,8 +1,5 @@
 import io.restassured.RestAssured;
-import io.restassured.http.Method;
-import io.restassured.response.Response;
 import org.hamcrest.Matchers;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
