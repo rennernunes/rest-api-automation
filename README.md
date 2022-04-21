@@ -29,6 +29,12 @@ CODE)
 https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
 ```
 
+### HTTP Verbs:
+
+```
+https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Methods
+```
+
 ### Extensão formatar JSON navegador:
 ```
 https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=pt-BR
